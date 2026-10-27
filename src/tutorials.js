@@ -1,0 +1,67 @@
+export const tutorials = [
+  {
+    id: 1,
+    slug: "premiere-page-html",
+    title: "Créer sa première page HTML",
+    description:
+      "Découvre la structure d'une page web et crée ton premier document HTML.",
+    format: "Screencast",
+    duration: "6–8 min",
+    level: "Débutant",
+    technology: "HTML",
+    status: "À venir",
+    cover: "/images/html-cover.webp",
+  },
+  {
+    id: 2,
+    slug: "html-css-javascript",
+    title: "Comprendre HTML, CSS et JavaScript",
+    description:
+      "Comprends le rôle de chaque technologie à travers une animation courte.",
+    format: "Motion design",
+    duration: "1 min 30",
+    level: "Débutant",
+    technology: "HTML · CSS · JS",
+    status: "À venir",
+    cover: "/images/web-tech-cover.webp",
+  },
+  {
+    id: 3,
+    slug: "bases-css",
+    title: "Mettre en forme une page avec CSS",
+    description:
+      "Apprends à modifier les couleurs, les espacements, les polices et la disposition.",
+    format: "Module illustré",
+    duration: "5–10 min",
+    level: "Débutant",
+    technology: "CSS",
+    status: "À venir",
+    cover: "/images/css-cover.png",
+  },
+  {
+    id: 4,
+    slug: "interactions-javascript",
+    title: "Rendre une page interactive",
+    description:
+      "Crée un bouton qui modifie le texte ou la couleur d'un élément.",
+    format: "Tutoriel pratique",
+    duration: "5–8 min",
+    level: "Débutant",
+    technology: "JavaScript",
+    status: "À venir",
+    cover: "/images/javascript-cover.jpg",
+  },
+  {
+    id: 5,
+    slug: "site-responsive",
+    title: "Adapter son site aux mobiles",
+    description:
+      "Découvre le responsive design et les media queries pour les petits écrans.",
+    format: "Guide illustré",
+    duration: "5–10 min",
+    level: "Débutant",
+    technology: "CSS",
+    status: "À venir",
+    cover: "/images/responsive-cover.webp",
+  },
+];

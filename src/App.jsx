@@ -9,43 +9,8 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+import { tutorials } from "./tutorials";
 import "./App.css";
-
-const tutorials = [
-  {
-    number: "01",
-    category: "HTML",
-    title: "Crée ta première page web",
-    description:
-      "Découvre la structure d'une page HTML et construis ton premier document.",
-    duration: "7 min",
-    level: "Débutant",
-    color: "blue",
-    status: "À venir",
-  },
-  {
-    number: "02",
-    category: "HTML · CSS · JS",
-    title: "Comprends les trois technologies",
-    description:
-      "Apprends le rôle de HTML, CSS et JavaScript grâce à une animation.",
-    duration: "1 min 30",
-    level: "Débutant",
-    color: "purple",
-    status: "À venir",
-  },
-  {
-    number: "03",
-    category: "CSS",
-    title: "Donne du style à ta page",
-    description:
-      "Personnalise les couleurs, les textes et la mise en page avec CSS.",
-    duration: "10 min",
-    level: "Débutant",
-    color: "pink",
-    status: "À venir",
-  },
-];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -138,6 +103,7 @@ function App() {
 
           <div className="hero-visual" aria-label="Illustration du code web">
             <div className="visual-glow" />
+
             <div className="floating-badge badge-top">
               <span className="badge-dot" />
               Apprentissage pratique
@@ -156,42 +122,42 @@ function App() {
 
               <div className="code-content">
                 <div>
-                  <span className="line-number">01</span>
+                  <span className="line-number">01</span>{" "}
                   <span className="code-purple">&lt;!DOCTYPE</span>{" "}
                   <span className="code-blue">html</span>
                   <span className="code-purple">&gt;</span>
                 </div>
                 <div>
-                  <span className="line-number">02</span>
+                  <span className="line-number">02</span>{" "}
                   <span className="code-purple">&lt;html&gt;</span>
                 </div>
                 <div>
-                  <span className="line-number">03</span>
+                  <span className="line-number">03</span>{" "}
                   &nbsp;&nbsp;
                   <span className="code-purple">&lt;body&gt;</span>
                 </div>
                 <div className="code-highlight">
-                  <span className="line-number">04</span>
+                  <span className="line-number">04</span>{" "}
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="code-purple">&lt;h1&gt;</span>
                 </div>
                 <div className="code-highlight">
-                  <span className="line-number">05</span>
+                  <span className="line-number">05</span>{" "}
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="code-green">Hello, world!</span>
                 </div>
                 <div className="code-highlight">
-                  <span className="line-number">06</span>
+                  <span className="line-number">06</span>{" "}
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="code-purple">&lt;/h1&gt;</span>
                 </div>
                 <div>
-                  <span className="line-number">07</span>
+                  <span className="line-number">07</span>{" "}
                   &nbsp;&nbsp;
                   <span className="code-purple">&lt;/body&gt;</span>
                 </div>
                 <div>
-                  <span className="line-number">08</span>
+                  <span className="line-number">08</span>{" "}
                   <span className="code-purple">&lt;/html&gt;</span>
                 </div>
               </div>
@@ -214,18 +180,38 @@ function App() {
           </div>
         </section>
 
-        <section className="stats-strip section-container" aria-label="Présentation du parcours">
+        <section
+          className="stats-strip section-container"
+          aria-label="Présentation du parcours"
+        >
           <div className="stat-item">
-            <span className="stat-icon"><BookOpen size={21} /></span>
-            <div><strong>5</strong><span>tutoriels prévus</span></div>
+            <span className="stat-icon">
+              <BookOpen size={21} />
+            </span>
+            <div>
+              <strong>{tutorials.length}</strong>
+              <span>tutoriels prévus</span>
+            </div>
           </div>
+
           <div className="stat-item">
-            <span className="stat-icon"><Code2 size={21} /></span>
-            <div><strong>3</strong><span>technologies web</span></div>
+            <span className="stat-icon">
+              <Code2 size={21} />
+            </span>
+            <div>
+              <strong>3</strong>
+              <span>technologies web</span>
+            </div>
           </div>
+
           <div className="stat-item">
-            <span className="stat-icon"><GraduationCap size={21} /></span>
-            <div><strong>100 %</strong><span>accessible aux débutants</span></div>
+            <span className="stat-icon">
+              <GraduationCap size={21} />
+            </span>
+            <div>
+              <strong>100 %</strong>
+              <span>accessible aux débutants</span>
+            </div>
           </div>
         </section>
 
@@ -234,8 +220,11 @@ function App() {
             <div>
               <span className="section-kicker">UN PARCOURS GUIDÉ</span>
               <h2>Apprends en construisant.</h2>
-              <p>Les bonnes bases, dans le bon ordre, sans te compliquer la vie.</p>
+              <p>
+                Les bonnes bases, dans le bon ordre, sans te compliquer la vie.
+              </p>
             </div>
+
             <a className="text-link" href="#tutoriels">
               Voir les tutoriels <ArrowRight size={17} />
             </a>
@@ -246,24 +235,36 @@ function App() {
               <span className="technology-symbol">&lt;/&gt;</span>
               <span className="technology-label">ÉTAPE 01</span>
               <h3>HTML</h3>
-              <p>Construis la structure de tes pages et organise ton contenu.</p>
-              <a href="#tutoriels">Découvrir HTML <ArrowRight size={16} /></a>
+              <p>
+                Construis la structure de tes pages et organise ton contenu.
+              </p>
+              <a href="#tutoriels">
+                Découvrir HTML <ArrowRight size={16} />
+              </a>
             </article>
 
             <article className="technology-card technology-css">
               <span className="technology-symbol">✳</span>
               <span className="technology-label">ÉTAPE 02</span>
               <h3>CSS</h3>
-              <p>Ajoute des couleurs, du style et une mise en page harmonieuse.</p>
-              <a href="#tutoriels">Découvrir CSS <ArrowRight size={16} /></a>
+              <p>
+                Ajoute des couleurs, du style et une mise en page harmonieuse.
+              </p>
+              <a href="#tutoriels">
+                Découvrir CSS <ArrowRight size={16} />
+              </a>
             </article>
 
             <article className="technology-card technology-js">
               <span className="technology-symbol">JS</span>
               <span className="technology-label">ÉTAPE 03</span>
               <h3>JavaScript</h3>
-              <p>Rends tes pages interactives et donne vie à tes idées.</p>
-              <a href="#tutoriels">Découvrir JavaScript <ArrowRight size={16} /></a>
+              <p>
+                Rends tes pages interactives et donne vie à tes idées.
+              </p>
+              <a href="#tutoriels">
+                Découvrir JavaScript <ArrowRight size={16} />
+              </a>
             </article>
           </div>
         </section>
@@ -274,45 +275,77 @@ function App() {
               <div>
                 <span className="section-kicker">LA BIBLIOTHÈQUE WEBSTART</span>
                 <h2>Le prochain pas commence ici.</h2>
-                <p>De petites leçons pour progresser à ton propre rythme.</p>
+                <p>
+                  De petites leçons pour progresser à ton propre rythme.
+                </p>
               </div>
-              <span className="catalog-count">5 contenus prévus</span>
+
+              <span className="catalog-count">
+                {tutorials.length} contenus prévus
+              </span>
             </div>
 
             <div className="tutorial-grid">
-              {tutorials.map((tutorial) => (
-                <article className="tutorial-card" key={tutorial.number}>
-                  <div className={`tutorial-art art-${tutorial.color}`}>
-                    <span className="tutorial-number">{tutorial.number}</span>
-                    <span className="art-symbol">
-                      {tutorial.category === "HTML" ? "</>" : tutorial.category === "CSS" ? "✳" : "JS"}
-                    </span>
-                    <span className="tutorial-status">{tutorial.status}</span>
-                  </div>
-                  <div className="tutorial-body">
-                    <div className="tutorial-meta">
-                      <span>{tutorial.category}</span>
-                      <span>{tutorial.duration}</span>
+              {tutorials.map((tutorial) => {
+                const category = tutorial.technology;
+                const color = category.includes("HTML")
+                  ? "blue"
+                  : category.includes("CSS")
+                    ? "pink"
+                    : "purple";
+
+                return (
+                  <article className="tutorial-card" key={tutorial.id}>
+                    <div className={`tutorial-art art-${color}`}>
+                      <img
+                        className="tutorial-cover"
+                        src={tutorial.cover}
+                        alt={`Couverture du tutoriel : ${tutorial.title}`}
+                        loading="lazy"
+                        onError={(event) => {
+                          event.currentTarget.style.display = "none";
+                        }}
+                      />
+
+                      <span className="tutorial-number">
+                        {String(tutorial.id).padStart(2, "0")}
+                      </span>
+
+                      <span className="tutorial-status">{tutorial.status}</span>
                     </div>
-                    <h3>{tutorial.title}</h3>
-                    <p>{tutorial.description}</p>
-                    <div className="tutorial-bottom">
-                      <span className="level-tag">{tutorial.level}</span>
-                      <span className="coming-soon">Bientôt disponible</span>
+
+                    <div className="tutorial-body">
+                      <div className="tutorial-meta">
+                        <span>{category}</span>
+                        <span>{tutorial.duration}</span>
+                      </div>
+
+                      <h3>{tutorial.title}</h3>
+                      <p>{tutorial.description}</p>
+
+                      <div className="tutorial-bottom">
+                        <span className="level-tag">{tutorial.level}</span>
+                        <span className="coming-soon">
+                          Bientôt disponible
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
 
             <p className="catalog-note">
-              Les autres tutoriels seront ajoutés au fur et à mesure de leur création.
+              Les tutoriels seront ajoutés au fur et à mesure de leur création.
             </p>
           </div>
         </section>
 
         <section className="about-section section-container" id="apropos">
-          <div className="about-icon"><Sparkles size={27} /></div>
+          <div className="about-icon">
+            <Sparkles size={27} />
+          </div>
+
           <div>
             <span className="section-kicker">À PROPOS DE WEBSTART</span>
             <h2>Moins de théorie, plus de pratique.</h2>
@@ -322,6 +355,7 @@ function App() {
               animations, guides illustrés et exercices.
             </p>
           </div>
+
           <a className="button button-primary" href="#tutoriels">
             Faire mes premiers pas <ArrowRight size={18} />
           </a>
@@ -331,12 +365,20 @@ function App() {
       <footer className="site-footer">
         <div className="footer-main section-container">
           <a className="brand footer-brand" href="#accueil">
-            <span className="brand-icon"><Code2 size={22} /></span>
-            <span>Web<span className="brand-accent">Start</span></span>
+            <span className="brand-icon">
+              <Code2 size={22} />
+            </span>
+            <span>
+              Web<span className="brand-accent">Start</span>
+            </span>
           </a>
+
           <p>Les premiers pas vers le développement web.</p>
-          <a href="#accueil" className="back-to-top">Retour en haut ↑</a>
+          <a href="#accueil" className="back-to-top">
+            Retour en haut ↑
+          </a>
         </div>
+
         <div className="footer-bottom section-container">
           <span>© 2026 WebStart · Projet pédagogique</span>
           <span>Conçu pour apprendre, pensé pour débuter.</span>
