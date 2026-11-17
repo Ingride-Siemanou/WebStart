@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import TutorialPage from "./pages/TutorialPage";
 import {
   ArrowRight,
   BookOpen,
@@ -12,7 +14,7 @@ import {
 import { tutorials } from "./tutorials";
 import "./App.css";
 
-function App() {
+function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -273,7 +275,9 @@ function App() {
           <div className="section-container">
             <div className="section-heading">
               <div>
-                <span className="section-kicker">LA BIBLIOTHÈQUE WEBSTART</span>
+                <span className="section-kicker">
+                  LA BIBLIOTHÈQUE WEBSTART
+                </span>
                 <h2>Le prochain pas commence ici.</h2>
                 <p>
                   De petites leçons pour progresser à ton propre rythme.
@@ -295,23 +299,35 @@ function App() {
                     : "purple";
 
                 return (
-                  <article className="tutorial-card" key={tutorial.id}>
+                  <Link
+                    to={`/tutoriels/${tutorial.slug}`}
+                    className="tutorial-card"
+                    key={tutorial.id}
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
                     <div className={`tutorial-art art-${color}`}>
-                      <img
-                        className="tutorial-cover"
-                        src={tutorial.cover}
-                        alt={`Couverture du tutoriel : ${tutorial.title}`}
-                        loading="lazy"
-                        onError={(event) => {
-                          event.currentTarget.style.display = "none";
-                        }}
-                      />
+                      {tutorial.cover && (
+                        <img
+                          className="tutorial-cover"
+                          src={tutorial.cover}
+                          alt={`Couverture du tutoriel : ${tutorial.title}`}
+                          loading="lazy"
+                          onError={(event) => {
+                            event.currentTarget.style.display = "none";
+                          }}
+                        />
+                      )}
 
                       <span className="tutorial-number">
                         {String(tutorial.id).padStart(2, "0")}
                       </span>
 
-                      <span className="tutorial-status">{tutorial.status}</span>
+                      <span className="tutorial-status">
+                        {tutorial.status}
+                      </span>
                     </div>
 
                     <div className="tutorial-body">
@@ -326,11 +342,11 @@ function App() {
                       <div className="tutorial-bottom">
                         <span className="level-tag">{tutorial.level}</span>
                         <span className="coming-soon">
-                          Bientôt disponible
+                          Découvrir le tutoriel →
                         </span>
                       </div>
                     </div>
-                  </article>
+                  </Link>
                 );
               })}
             </div>
@@ -374,6 +390,7 @@ function App() {
           </a>
 
           <p>Les premiers pas vers le développement web.</p>
+
           <a href="#accueil" className="back-to-top">
             Retour en haut ↑
           </a>
@@ -385,6 +402,25 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/tutoriels/:slug" element={<TutorialPage />} />
+      <Route
+        path="*"
+        element={
+          <main className="tutorial-page">
+            <h1>Page introuvable</h1>
+            <p>Cette adresse ne correspond à aucune page de WebStart.</p>
+            <Link to="/">Retour à l’accueil</Link>
+          </main>
+        }
+      />
+    </Routes>
   );
 }
 

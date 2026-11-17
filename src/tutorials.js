@@ -32,7 +32,6 @@ export const tutorials = [
     description:
       "Apprends à modifier les couleurs, les espacements, les polices et la disposition.",
     format: "Module illustré",
-    duration: "5–10 min",
     level: "Débutant",
     technology: "CSS",
     status: "À venir",
@@ -45,7 +44,6 @@ export const tutorials = [
     description:
       "Crée un bouton qui modifie le texte ou la couleur d'un élément.",
     format: "Tutoriel pratique",
-    duration: "5–8 min",
     level: "Débutant",
     technology: "JavaScript",
     status: "À venir",
@@ -58,7 +56,6 @@ export const tutorials = [
     description:
       "Découvre le responsive design et les media queries pour les petits écrans.",
     format: "Guide illustré",
-    duration: "5–10 min",
     level: "Débutant",
     technology: "CSS",
     status: "À venir",
